@@ -26,6 +26,12 @@ public class LibraryLogin {
         Driver.getDriver().navigate().to(ConfigReader.read("url"));
     }
 
+    public void login(String username, String password){
+        this.usernameBox.sendKeys(username);
+        this.passwordBox.sendKeys(password);
+        this.submitBtn.click();
+    }
+
 
 
 
