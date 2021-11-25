@@ -26,7 +26,7 @@ public class BrowserUtil {
 
         boolean result = false ;
 
-        WebDriverWait wait = new WebDriverWait(com.cheatSheat.utility.Driver.getDriver() ,timeToWait ) ;
+        WebDriverWait wait = new WebDriverWait(com.cheatSheet.utility.Driver.getDriver() ,timeToWait ) ;
 
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated( locator  ));
