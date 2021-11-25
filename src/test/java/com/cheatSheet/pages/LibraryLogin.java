@@ -1,5 +1,6 @@
 package com.cheatSheet.pages;
 
+import com.cheatSheet.utility.BrowserUtil;
 import com.cheatSheet.utility.ConfigReader;
 import com.cheatSheet.utility.Driver;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,9 @@ public class LibraryLogin {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement submitBtn;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    public WebElement error;
+
     public LibraryLogin(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -40,6 +44,16 @@ public class LibraryLogin {
         String expected = Driver.getDriver().getCurrentUrl();
         boolean isEqual = actual.equals(expected);
         System.out.println(isEqual);
+    }
+
+    public void errorMsg(String username,String password){
+        this.usernameBox.sendKeys(username);
+        this.passwordBox.sendKeys(password);
+        this.submitBtn.click();
+        BrowserUtil.waitFor(1);
+        System.out.println("this.error.isDisplayed() = " + this.error.isDisplayed());
+
+
     }
 
 
