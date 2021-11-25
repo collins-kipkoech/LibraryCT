@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class LibraryLogin {
 
     @FindBy(xpath = "//input[@id='inputEmail']")
@@ -30,6 +33,13 @@ public class LibraryLogin {
         this.usernameBox.sendKeys(username);
         this.passwordBox.sendKeys(password);
         this.submitBtn.click();
+    }
+
+    public void isOnLoginPage(){
+        String actual = "https://library2.cybertekschool.com/login.html";
+        String expected = Driver.getDriver().getCurrentUrl();
+        boolean isEqual = actual.equals(expected);
+        System.out.println(isEqual);
     }
 
 
