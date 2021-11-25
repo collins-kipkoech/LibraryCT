@@ -14,7 +14,7 @@ public class LoginTest extends TestBase {
     public void testLogin(){
         libraryLogin = new LibraryLogin();
         libraryLogin.goTo();
-        String username = ConfigReader.read("username");
+        String username = ConfigReader.read("student");
         String password = ConfigReader.read("password");
         libraryLogin.login(username,password);
         BrowserUtil.waitFor(2);
@@ -41,10 +41,10 @@ public class LoginTest extends TestBase {
     public void testModules(){
         libraryLogin = new LibraryLogin();
         libraryLogin.goTo();
-        String username = ConfigReader.read("email2");
+        String username = ConfigReader.read("student");
         String password = ConfigReader.read("password");
         libraryLogin.login(username,password);
-        libraryLogin.checkModules("email2");
+        libraryLogin.checkModules("student");
 
     }
 }
