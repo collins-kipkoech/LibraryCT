@@ -75,14 +75,14 @@ public class LibraryLogin {
 
     public void checkModules(String username){
         if(username.equals("email1")){
-            this.modules.size();
+            System.out.println("this.modules.size() = " + this.modules.size());
 
         }else if(username.equals("email2")){
-            this.modules.size();
+            System.out.println("this.modules.size() = " + this.modules.size());
         }else{
             System.out.println("Invalid username");
         }
-  
+
     }
 
 

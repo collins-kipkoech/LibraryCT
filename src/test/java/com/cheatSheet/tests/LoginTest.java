@@ -36,4 +36,15 @@ public class LoginTest extends TestBase {
         libraryLogin.errorMsg("bla","bla");
 
     }
+
+    @Test
+    public void testModules(){
+        libraryLogin = new LibraryLogin();
+        libraryLogin.goTo();
+        String username = ConfigReader.read("email2");
+        String password = ConfigReader.read("password");
+        libraryLogin.login(username,password);
+        libraryLogin.checkModules("email2");
+
+    }
 }
