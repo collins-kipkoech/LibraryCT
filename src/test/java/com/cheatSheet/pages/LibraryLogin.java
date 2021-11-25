@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LibraryLogin {
@@ -24,6 +26,12 @@ public class LibraryLogin {
 
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement error;
+
+    @FindBy(tagName = "title")
+    public WebElement title1;
+
+    @FindBy(xpath = "//li[@class='nav-item']")
+    public List<WebElement> modules;
 
     public LibraryLogin(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -53,6 +61,27 @@ public class LibraryLogin {
         BrowserUtil.waitFor(1);
         System.out.println("this.error.isDisplayed() = " + this.error.isDisplayed());
 
+
+    }
+
+    public void checkTitle(){
+        String actual = "Login - Library";
+        String expected = Driver.getDriver().getTitle();
+
+        assertEquals(actual,expected);
+
+
+    }
+
+    public void checkModules(String username){
+        if(username.equals("email1")){
+            System.out.println("this.modules.size() = " + this.modules.size());
+
+        }else if(username.equals("email2")){
+            System.out.println("this.modules.size() = " + this.modules.size());
+        }else{
+            System.out.println("Invalid username");
+        }
 
     }
 
