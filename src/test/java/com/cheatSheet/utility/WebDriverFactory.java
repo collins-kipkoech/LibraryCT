@@ -1,4 +1,4 @@
-package com.cheatSheat.utility;
+package com.cheatSheet.utility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

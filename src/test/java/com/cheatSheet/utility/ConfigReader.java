@@ -1,4 +1,4 @@
-package com.cheatSheat.utility;
+package com.cheatSheet.utility;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.cheatSheat.utility;
+package com.cheatSheet.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -26,7 +26,7 @@ public class BrowserUtil {
 
         boolean result = false ;
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver() ,timeToWait ) ;
+        WebDriverWait wait = new WebDriverWait(com.cheatSheat.utility.Driver.getDriver() ,timeToWait ) ;
 
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated( locator  ));

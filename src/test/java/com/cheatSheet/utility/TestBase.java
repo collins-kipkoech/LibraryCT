@@ -1,4 +1,4 @@
-package com.cheatSheat.utility;
+package com.cheatSheet.utility;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
