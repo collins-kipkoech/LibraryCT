@@ -25,6 +25,9 @@ public class LibraryLogin {
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement error;
 
+    @FindBy(tagName = "title")
+    public WebElement title1;
+
     public LibraryLogin(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -52,6 +55,15 @@ public class LibraryLogin {
         this.submitBtn.click();
         BrowserUtil.waitFor(1);
         System.out.println("this.error.isDisplayed() = " + this.error.isDisplayed());
+
+
+    }
+
+    public void checkTitle(){
+        String actual = "Login - Library";
+        String expected = Driver.getDriver().getTitle();
+
+        assertEquals(actual,expected);
 
 
     }
